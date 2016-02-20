@@ -26,6 +26,7 @@ qualitySettings =
   , ("medium", 0.5)
   , ("mediumhigh", 0.65)
   , ("high", 0.8)
+  , ("veryhigh", 0.9)
   , ("best", 1)
   ]
 

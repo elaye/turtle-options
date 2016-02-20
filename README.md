@@ -27,4 +27,5 @@ Parse a quality option. This can be a percentage or a keyword (`verylow`, `low`,
 |medium     |       50%|
 |mediumhigh |       65%|
 |high       |       80%|
+|veryhigh   |       90%|
 |best       |      100%|
