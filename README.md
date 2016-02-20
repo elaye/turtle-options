@@ -6,7 +6,7 @@ This package provides additional command line options for [Turtle](https://hacka
 Percentage
 ----------
 
-Parse a percentage (`20%`). The result is a floating point number (`Float`).
+Parse a percentage (`20%`). The result is a floating point number (`Float`), corresponding to the given percentage divided by 100.
 
 Scale
 -----
@@ -19,10 +19,12 @@ Quality
 
 Parse a quality option. This can be a percentage or a keyword (`verylow`, `low`, `mediumlow`, `medium`, `mediumhigh`, `high`, `best`). The keywords are mapped to a percentage according to the following table:
 
-verylow 10%
-low 20%
-mediumlow 35%
-medium 50%
-mediumhigh 65%
-high 80%
-best 100%
+|Keyword    |Percentage|
+------------------------
+|verylow    |       10%|
+|low        |       20%|
+|mediumlow  |       35%|
+|medium     |       50%|
+|mediumhigh |       65%|
+|high       |       80%|
+|best       |      100%|
