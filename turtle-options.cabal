@@ -16,6 +16,8 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Turtle.Options.Scale
+                     , Turtle.Options.Percentage
+                     , Turtle.Options.Quality
                      , Turtle.Options.Parsers
   build-depends:       base >= 4.7 && < 5
                      , parsec

@@ -13,7 +13,7 @@ import qualified Data.Text as Text
 
 import Text.Parsec
 
-import Turtle.Options.Parsers (percent, float)
+import Turtle.Options.Parsers (Parser, percent, float)
 
 data Scale =
   Percentage Float
@@ -21,8 +21,6 @@ data Scale =
   | Width Int
   | Height Int
   deriving (Eq, Show)
-
-type Parser = Parsec String ()
 
 defScaleHelp :: Optional HelpMessage
 defScaleHelp = "Scale option. SCALE can be a percentage (20%), a size (480x320), a width (480x) or a height (x320)"
