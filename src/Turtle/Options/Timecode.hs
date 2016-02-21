@@ -2,6 +2,7 @@
 
 module Turtle.Options.Timecode
 ( Timecode(..)
+, RelTimecode(..)
 , optTimecode
 , defTimecodeHelp
 , (<+>)
@@ -33,8 +34,17 @@ type Millisecond = Int
 
 data Timecode = Timecode Hour Minute Second Millisecond deriving (Eq)
 
+data RelTimecode = 
+  PosTimecode Timecode
+  | NegTimecode Timecode
+  deriving (Eq)de
+
 instance Show Timecode where
   show (Timecode h m s ms) = (show h) ++ ":" ++ (show m) ++ ":" ++ (show s) ++ "." ++ (show ms)
+
+instance Show NegativeTimecode where
+  show (PosTimecode t) = show t
+  show (NegTimecode t) = "-" ++ (show t)
 
 instance Monoid Timecode where
   mappend (Timecode ha ma sa msa) (Timecode hb mb sb msb) = normalizeTimecode (Timecode (ha + hb) (ma + mb) (sa + sb) (msa + msb))
