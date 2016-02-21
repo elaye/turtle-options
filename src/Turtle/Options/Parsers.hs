@@ -1,7 +1,11 @@
 module Turtle.Options.Parsers
-( float
+( number
+, plus
+, minus
+, float
 , percent
 , Parser
+, (<:>)
 ) where
 
 import Control.Applicative ((<$>), (<*>), (<*), (*>))

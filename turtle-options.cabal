@@ -18,6 +18,7 @@ library
   exposed-modules:     Turtle.Options.Scale
                      , Turtle.Options.Percentage
                      , Turtle.Options.Quality
+                     , Turtle.Options.Timecode
                      , Turtle.Options.Parsers
   build-depends:       base >= 4.7 && < 5
                      , parsec
