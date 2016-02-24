@@ -5,6 +5,10 @@ module Turtle.Options.Timecode
 , RelTimecode(..)
 , optTimecode
 , defTimecodeHelp
+, msToTimecode
+, sToTimecode
+, mToTimecode
+, hToTimecode
 , (<+>)
 ) where
 
@@ -37,7 +41,7 @@ data Timecode = Timecode Hour Minute Second Millisecond deriving (Eq)
 data RelTimecode = 
   PosTimecode Timecode
   | NegTimecode Timecode
-  deriving (Eq)de
+  deriving (Eq)
 
 instance Show Timecode where
   show (Timecode h m s ms) = (show h) ++ ":" ++ (show m) ++ ":" ++ (show s) ++ "." ++ (show ms)
@@ -55,7 +59,7 @@ infixr 5 <+>
 a <+> b = mappend a b
 
 normalizeTimecode :: Timecode -> Timecode
-normalizeTimecode (Timecode h m s ms) = Timecode newH newM  newS newMs
+normalizeTimecode (Timecode h m s ms) = Timecode newH newM newS newMs
   where
     msTotal = ms + 1000 * (s + 60 * (m + 60 * h))  
     newMs = msTotal `mod` 1000
