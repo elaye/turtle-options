@@ -46,7 +46,7 @@ data RelTimecode =
 instance Show Timecode where
   show (Timecode h m s ms) = (show h) ++ ":" ++ (show m) ++ ":" ++ (show s) ++ "." ++ (show ms)
 
-instance Show NegativeTimecode where
+instance Show RelTimecode where
   show (PosTimecode t) = show t
   show (NegTimecode t) = "-" ++ (show t)
 
