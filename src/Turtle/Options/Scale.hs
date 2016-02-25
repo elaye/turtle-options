@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 module Turtle.Options.Scale
-( Scale
+( Scale(..)
 , optScale
 , defScaleHelp
 ) where
