@@ -1,5 +1,5 @@
 name:                turtle-options
-version:             0.1.0.1
+version:             0.1.0.2
 synopsis:            Collection of command line options and parsers for these options
 description:         Please see README.md
 homepage:            http://github.com/githubuser/turtle-options#readme
