@@ -1,6 +1,8 @@
 Turtle options
 ==============
 
+[![Build Status](https://travis-ci.org/elaye/turtle-options.svg?branch=master)](https://travis-ci.org/elaye/turtle-options)
+
 This package provides additional command line options for [Turtle](https://hackage.haskell.org/package/turtle-1.2.5/docs/Turtle-Tutorial.html).
 
 Percentage
