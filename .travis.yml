@@ -1,31 +1,33 @@
-language: c
+# From https://github.com/commercialhaskell/stack/blob/master/.travis.yml
 
+language: c
 sudo: false
 
-# Caching so the next build will be fast too.
 cache:
-  directories:
-    - $HOME/.stack
+    directories:
+        - $HOME/.ghc
+        - $HOME/.cabal
+        - $HOME/.stack
 
-before_install:
-  # Download and unpack the stack executable
-  - mkdir -p ~/.local/bin
-  - export PATH=$HOME/.local/bin:$PATH
-  - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+matrix:
+  include:
+    - env: BUILD=stack STACK_YAML=stack.yaml
+      compiler: ": #stack 7.10.3 osx"
 
+  allow_failures:
+    - env: BUILD=cabal CABALVER=head GHCVER=head
+
+# Note: the distinction between `before_install` and `install` is not important.
+# - in before_install we install build tools
+# - in install we install (haskell) dependencies
 before_install:
-  - export PATH=/opt/ghc/7.10.2/bin:$PATH
+ - unset CC
+ - export PATH=$HOME/.local/bin:/opt/ghc/$GHCVER/bin:$PATH;;
+ - ./.travis-setup.sh
 
 install:
-  - stack -j 2 setup --no-terminal
-  - stack -j 2 build --only-snapshot --no-terminal
+ - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
+ - stack --no-terminal test --only-dependencies;;
 
 script:
-  - stack -j 2 build --no-terminal
-
-addons:
-  apt:
-    sources:
-      - hvr-ghc
-    packages:
-      - ghc-7.10.2
+  - stack --no-terminal test --haddock --no-haddock-deps;;
