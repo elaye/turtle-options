@@ -5,6 +5,7 @@ module Turtle.Options.Timecode
 , RelTimecode(..)
 , optTimecode
 , defTimecodeHelp
+, timecode
 , msToTimecode
 , sToTimecode
 , mToTimecode
@@ -77,7 +78,13 @@ normalTimecode :: Parser Timecode
 normalTimecode = do
   --plus <|> minus
   ts <- number `sepBy1` char ':'
-  ms <- read <$> (option "0" $ char '.' *> number)
+  --ms <- read <$> (option "0" $ char '.' *> number)
+  msStr <- option "0" $ char '.' *> number
+  let ms = read $ case (length msStr) of
+              1 -> (msStr ++ "00")
+              2 -> msStr ++ "0"
+              _ -> msStr
+
   return $ case (fmap read ts) of
     (h:m:s:[]) -> toTimecode h m s ms
     (m:s:[]) -> toTimecode 0 m s ms
