@@ -8,7 +8,7 @@ module Turtle.Options.Parsers
 , (<:>)
 ) where
 
-import Control.Applicative ((<$>), (<*>), (<*), (*>))
+import Control.Applicative (Applicative, (<$>), (<*>), (<*), (*>))
 
 import Text.Parsec (Parsec, many1, digit, char, option, oneOf, (<|>))
 
