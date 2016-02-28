@@ -19,6 +19,7 @@ import qualified Data.Text as Text
 
 --import Data.Monoid (Sum, (<>))
 import Data.Monoid (Monoid, mappend)
+import Control.Applicative ((<$>), (<*>), (*>))
 
 import Text.Parsec
 import Text.ParserCombinators.Parsec.Error (Message(..), newErrorMessage)

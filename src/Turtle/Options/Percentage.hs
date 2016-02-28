@@ -10,6 +10,8 @@ import Data.Optional (Optional)
 import qualified Turtle
 import qualified Data.Text as Text
 
+import Control.Applicative ((<$>))
+
 import Text.Parsec
 
 import Turtle.Options.Parsers (Parser, percent, float)

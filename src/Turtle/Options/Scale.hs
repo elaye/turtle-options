@@ -10,6 +10,7 @@ import Turtle (ArgName, ShortName, HelpMessage, opt)
 import Data.Optional (Optional)
 import qualified Turtle
 import qualified Data.Text as Text
+import Control.Applicative ((<$>), (<*>), (*>), (<*))
 
 import Text.Parsec
 
