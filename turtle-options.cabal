@@ -2,7 +2,7 @@ name:                turtle-options
 version:             0.1.0.2
 synopsis:            Collection of command line options and parsers for these options
 description:         Please see README.md
-homepage:            http://github.com/githubuser/turtle-options#readme
+homepage:            https://github.com/elaye/turtle-options#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Elie Genard
@@ -49,4 +49,4 @@ test-suite turtle-options-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/turtle-options
+  location: https://github.com/elaye/turtle-options
