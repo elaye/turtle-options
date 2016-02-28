@@ -3,6 +3,7 @@
 module Turtle.Options.Quality
 ( optQuality
 , defQualityHelp
+, quality
 ) where
 
 import Turtle (ArgName, ShortName, HelpMessage, opt)

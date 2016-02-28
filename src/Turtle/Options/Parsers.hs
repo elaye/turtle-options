@@ -42,4 +42,4 @@ float = fmap rd $ integer <++> decimal <++> exponent
           exponent = option "" $ oneOf "eE" <:> integer
 
 percent :: Parser Float
-percent = float <* char '%'
+percent = (/100) <$> float <* char '%'

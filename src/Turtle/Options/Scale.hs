@@ -51,7 +51,7 @@ percentage = choice [try p, f]
       v <- percent
       case v < 0 of
         True -> error "Error parsing scale percentage: can't have a negative value"
-        False -> return $ Percentage (v / 100)
+        False -> return $ Percentage v
 
 scale :: Parser Scale
 scale = choice [size, percentage, width, height]
