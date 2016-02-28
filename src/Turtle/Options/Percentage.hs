@@ -3,6 +3,7 @@
 module Turtle.Options.Percentage
 ( optPercentage
 , defPercentageHelp
+, percentage
 ) where
 
 import Turtle (ArgName, ShortName, HelpMessage, opt)
@@ -20,7 +21,7 @@ defPercentageHelp :: Optional HelpMessage
 defPercentageHelp = "Percentage: can be a positive or negative percentage (-43%), represented with a float." 
 
 percentage :: Parser Float
-percentage = try ((/100) <$> percent)
+percentage = try percent
 
 readPercentage :: String -> Maybe Float
 readPercentage str = case (parse percentage "Percentage (Float)" str) of
