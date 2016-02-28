@@ -4,6 +4,7 @@ module Turtle.Options.Scale
 ( Scale(..)
 , optScale
 , defScaleHelp
+, scale
 ) where
 
 import Turtle (ArgName, ShortName, HelpMessage, opt)
